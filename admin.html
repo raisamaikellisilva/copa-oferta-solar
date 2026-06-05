@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Administração</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:30px;
+background:#f5f5f5;
+}
+
+table{
+width:100%;
+background:white;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid #ddd;
+}
+
+input{
+width:100%;
+padding:8px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+background:#198754;
+border:none;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Painel Administrativo</h1>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Vendedor</th>
+<th>Vendas</th>
+<th>Avaliações</th>
+</tr>
+
+</thead>
+
+<tbody id="tabela"></tbody>
+
+</table>
+
+<button onclick="salvar()">
+Salvar Alterações
+</button>
+
+<script>
+
+const senha = prompt("Digite a senha:");
+
+if(senha !== "geosolares2026"){
+
+document.body.innerHTML =
+"<h1>Acesso Negado</h1>";
+
+throw new Error();
+
+}
+
+let vendedores = JSON.parse(localStorage.getItem("vendedores")) || [
+
+{nome:"Nunes",meta:104000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Léo",meta:85000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"David",meta:71000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Amanda",meta:57000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Keu",meta:39000,vendas:0,metaAvaliacoes:10,avaliacoes:0},
+{nome:"Arthur",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
+{nome:"Thomas",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
+{nome:"Railan",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
+{nome:"Renata",meta:76000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Karine",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
+{nome:"Ricardo",meta:35000,vendas:0,metaAvaliacoes:10,avaliacoes:0},
+{nome:"Thalis",meta:43000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Jalmiro",meta:40000,vendas:0,metaAvaliacoes:15,avaliacoes:0}
+
+];
+
+const tabela =
+document.getElementById("tabela");
+
+vendedores.forEach((v,i)=>{
+
+tabela.innerHTML += `
+
+<tr>
+
+<td>${v.nome}</td>
+
+<td>
+<input
+type="number"
+id="vendas${i}"
+value="${v.vendas}">
+</td>
+
+<td>
+<input
+type="number"
+id="aval${i}"
+value="${v.avaliacoes}">
+</td>
+
+</tr>
+
+`;
+
+});
+
+function salvar(){
+
+vendedores.forEach((v,i)=>{
+
+v.vendas =
+Number(
+document.getElementById("vendas"+i).value
+);
+
+v.avaliacoes =
+Number(
+document.getElementById("aval"+i).value
+);
+
+});
+
+localStorage.setItem(
+"vendedores",
+JSON.stringify(vendedores)
+);
+
+alert("Dados salvos!");
+
+}
+
+</script>
+
+</body>
+</html>
