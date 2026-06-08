@@ -169,8 +169,9 @@ header p{
 .carro{
     position:absolute;
     top:18px;
-
     font-size:45px;
+
+    transform:translateX(-50%);
 
     transition:all 1s ease;
 }
