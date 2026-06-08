@@ -57,8 +57,8 @@ vendedores[2].nome;
 
 vendedores.forEach((v,index)=>{
 
-let porcentagem =
-((v.vendas/v.meta)*100);
+let porcentagem = (v.vendas / v.meta) * 100;
+let posicao = Math.min(porcentagem, 100);
 
 if(porcentagem > 100)
 porcentagem = 100;
