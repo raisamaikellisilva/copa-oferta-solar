@@ -1,6 +1,6 @@
 let vendedores = JSON.parse(localStorage.getItem("vendedores")) || [
 
-{nome:"Nunes",meta:104000,vendas:119889,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Nunes",meta:104000,vendas:132399,metaAvaliacoes:15,avaliacoes:0},
 {nome:"Léo",meta:85000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
 {nome:"David",meta:71000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
 {nome:"Amanda",meta:57000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
@@ -8,7 +8,7 @@ let vendedores = JSON.parse(localStorage.getItem("vendedores")) || [
 {nome:"Arthur",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
 {nome:"Thomas",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
 {nome:"Railan",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
-{nome:"Renata",meta:76000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Renata",meta:76000,vendas:560000,metaAvaliacoes:15,avaliacoes:0},
 {nome:"Karine",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
 {nome:"Ricardo",meta:35000,vendas:0,metaAvaliacoes:10,avaliacoes:0},
 {nome:"Thalis",meta:43000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
