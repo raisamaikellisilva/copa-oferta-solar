@@ -58,10 +58,12 @@ vendedores[2].nome;
 vendedores.forEach((v,index)=>{
 
 let porcentagem = (v.vendas / v.meta) * 100;
-let posicao = Math.min(porcentagem, 100);
 
-if(porcentagem > 100)
-porcentagem = 100;
+if(porcentagem > 100){
+    porcentagem = 100;
+}
+
+let posicao = porcentagem;
 
 let pistaLargura = porcentagem;
 
@@ -83,9 +85,7 @@ ${porcentagem.toFixed(1)}%
 
 <div class="pista">
 
-<div
-class="carro"
-style="left:calc(${pistaLargura}% - 35px);"
+<div class="carro" style="left:${posicao}%;">
 🏎️
 </div>
 
