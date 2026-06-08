@@ -1,19 +1,18 @@
-let vendedores = JSON.parse(localStorage.getItem("vendedores")) || [
+let vendedores = [
 
-{nome:"Nunes",meta:104000,vendas:132399,metaAvaliacoes:15,avaliacoes:0},
-{nome:"Léo",meta:85000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Nunes",meta:104000,vendas:132399,metaAvaliacoes:15,avaliacoes:9},
+{nome:"Léo",meta:85000,vendas:0,metaAvaliacoes:15,avaliacoes:15},
 {nome:"David",meta:71000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
-{nome:"Amanda",meta:57000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
-{nome:"Keu",meta:39000,vendas:0,metaAvaliacoes:10,avaliacoes:0},
+{nome:"Amanda",meta:57000,vendas:0,metaAvaliacoes:15,avaliacoes:6},
+{nome:"Keu",meta:39000,vendas:0,metaAvaliacoes:10,avaliacoes:1},
 {nome:"Arthur",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
 {nome:"Thomas",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
 {nome:"Railan",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
-{nome:"Renata",meta:76000,vendas:560000,metaAvaliacoes:15,avaliacoes:0},
+{nome:"Renata",meta:76000,vendas:56000,metaAvaliacoes:15,avaliacoes:0},
 {nome:"Karine",meta:30000,vendas:0,metaAvaliacoes:5,avaliacoes:0},
 {nome:"Ricardo",meta:35000,vendas:0,metaAvaliacoes:10,avaliacoes:0},
 {nome:"Thalis",meta:43000,vendas:0,metaAvaliacoes:15,avaliacoes:0},
-{nome:"Jalmiro",meta:40000,vendas:5594,metaAvaliacoes:15,avaliacoes:0}
-
+{nome:"Jalmiro",meta:40000,vendas:0,metaAvaliacoes:15,avaliacoes:0}
 ];
 
 vendedores.sort((a,b)=>
@@ -64,7 +63,7 @@ let porcentagem =
 if(porcentagem > 100)
 porcentagem = 100;
 
-let pistaLargura = porcentagem * 0.9;
+let pistaLargura = porcentagem;
 
 pistas.innerHTML += `
 
@@ -86,7 +85,7 @@ ${porcentagem.toFixed(1)}%
 
 <div
 class="carro"
-style="left:${pistaLargura}%;">
+style="left:calc(${pistaLargura}% - 35px);"
 🏎️
 </div>
 
